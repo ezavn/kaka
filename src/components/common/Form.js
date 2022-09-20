@@ -32,7 +32,32 @@ const Form = () => {
   });
   const onHandlerSubmit = (values) => {
     if (!isValid) return;
-    console.log(values);
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+      // Adding method type
+      method: "POST",
+
+      // Adding body or contents to send
+      body: JSON.stringify({
+        values,
+      }),
+
+      // Adding headers to the request
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      // Converting to JSON
+      .then((response) => response.json())
+
+      // Displaying results to console
+      .then((data) => {
+        if (data) {
+          alert("Dang ky thanh cong");
+          console.log(data);
+        } else {
+          alert("Dang ky khong thanh cong");
+        }
+      });
   };
   return (
     <form

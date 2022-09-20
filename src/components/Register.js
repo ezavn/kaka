@@ -31,7 +31,7 @@ const Register = () => {
             <Countdown></Countdown>
             <Button
               href="#register-form"
-              className="hidden lg:block lg:mb-0 mt-[10px]"
+              className="hidden lg:inline-flex lg:mb-0 mt-[10px]"
             >
               Đăng ký ngay hôm nay
             </Button>
