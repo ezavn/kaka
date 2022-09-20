@@ -3,7 +3,10 @@ import Title from "./common/Title";
 
 const Coach = () => {
   return (
-    <section className="coach page-container mb-sectionMB md:mb-section lg:mb-0">
+    <section
+      id="coach"
+      className="coach page-container mb-sectionMB md:mb-section lg:mb-0"
+    >
       <Title
         subTitle="TẠI CHƯƠNG TRÌNH"
         reverse

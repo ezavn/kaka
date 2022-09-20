@@ -26,7 +26,10 @@ const benefits = [
 
 const Benefit = () => {
   return (
-    <section className="benefit md:py-section py-sectionMB bg-[url('../public/images/benefit-bg.png')] bg-left lg:bg-center bg-no-repeat md:mb-section mb-sectionMB">
+    <section
+      id="value"
+      className="benefit md:py-section py-sectionMB bg-[url('../public/images/benefit-bg.png')] bg-left lg:bg-center bg-no-repeat md:mb-section mb-sectionMB"
+    >
       <div className="page-container--md h-auto md:h-[400px] lg:h-[538px] flex md:flex-row flex-col">
         <div className="hidden md:flex items-center justify-center w-[350px] lg:w-[394px] h-full bg-red flex-shrink-0 relative px-[40px] lg:px-[60px]">
           <div className="w-[45px] h-[45px] bg-white absolute top-0 left-0"></div>

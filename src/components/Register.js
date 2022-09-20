@@ -37,7 +37,7 @@ const Register = () => {
             </Button>
           </div>
         </div>
-        <div className="mt-[50px] lg:mt-0 flex-1 w-full">
+        <div className="flex items-start justify-center mt-[50px] lg:mt-0 flex-1 w-full">
           <Form></Form>
         </div>
       </div>

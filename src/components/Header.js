@@ -24,7 +24,7 @@ const Header = () => {
           <a href="#value" className="font-bold uppercase font-lato">
             GIÁ TRỊ
           </a>
-          <a href="#speakers" className="font-bold uppercase font-lato">
+          <a href="#coach" className="font-bold uppercase font-lato">
             DIỄN GIẢ
           </a>
         </div>
@@ -40,7 +40,7 @@ const Header = () => {
               <a href="#value" className="font-bold uppercase font-lato">
                 GIÁ TRỊ
               </a>
-              <a href="#speakers" className="font-bold uppercase font-lato">
+              <a href="#coach" className="font-bold uppercase font-lato">
                 DIỄN GIẢ
               </a>
             </div>

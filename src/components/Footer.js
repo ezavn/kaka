@@ -12,7 +12,7 @@ const Footer = () => {
               className="object-cover w-full h-full"
             />
           </a>
-          <p className="text-justify w-[285px]">
+          <p className="text-justify md:w-[285px]">
             ActionCOACH là thương hiệu huấn luyện doanh nghiệp hàng đầu thế
             giới, được Brad Sugars thành lập năm 1993 tại Brisbane, Australia
             trong thời điểm khái niệm về huấn luyện doanh nghiệp còn khá lạ lẫm

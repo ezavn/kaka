@@ -36,12 +36,12 @@ const contents = [
 
 const Content = () => {
   return (
-    <section className="content bg-blue">
+    <section id="content" className="content bg-blue">
       <div className="page-container--lg md:py-section py-sectionMB">
         <Title className="text-center mb-[35px] md:mb-[50px]">
           NỘI DUNG <br className="block md:hidden" />
           <span className="leading-[1.6] md:leading-[1] font-semibold text-[38px] md:text-[52px] lg:text-[64px] text-white">
-            HUẤN LUYỆN
+            CHƯƠNG TRÌNH
           </span>
         </Title>
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-[35px] items-start">

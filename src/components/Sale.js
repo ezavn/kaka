@@ -4,7 +4,7 @@ import Title from "./common/Title";
 
 const Sale = () => {
   return (
-    <section className="flex flex-col items-start md:items-center md:flex-row sale page-container--lg md:mb-section mb-sectionMB">
+    <section className="flex flex-col items-center md:flex-row sale page-container--lg md:mb-section mb-sectionMB">
       <div className="w-auto md:w-[380px] lg:w-[590px] lg:h-[390px]">
         <img
           src="/images/sale-1.png"
@@ -12,8 +12,8 @@ const Sale = () => {
           alt=""
         />
       </div>
-      <div className="mt-[20px] md:mt-0 md:ml-[30px] lg:ml-[96px]">
-        <p className="flex items-center mb-[10px]">
+      <div className="text-center md:text-left mt-[20px] md:mt-0 md:ml-[30px] lg:ml-[96px]">
+        <p className="flex justify-center md:justify-start items-center mb-[10px]">
           <img
             srcSet="/icons/dot-icon.png 2x"
             className=" mr-[10px] inline-block"
@@ -44,7 +44,7 @@ const Sale = () => {
 
 const StarItem = ({ children }) => {
   return (
-    <div className="flex items-center gap-x-[14px]">
+    <div className="flex justify-center md:justify-start items-center gap-x-[14px]">
       <img srcSet="/icons/star-icon.png 2x" alt="" />
       <p className="text-[16px] md:text-[20px]">{children}</p>
     </div>
