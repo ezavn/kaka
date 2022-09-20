@@ -2,8 +2,8 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="hero w-full h-[610px] md:h-[720px] bg-[url('../public/images/hero.png')] bg-cover bg-center bg-no-repeat mb-sectionMB md:mb-section">
-      <div className="flex flex-col hero-content page-container max-w-[690px] pt-[150px]">
+    <section className="flex items-center justify-center hero w-full h-[610px] md:h-[720px] xl:h-[100vh] bg-[url('../public/images/hero.png')] bg-cover bg-center bg-no-repeat mb-sectionMB md:mb-section">
+      <div className="flex flex-col hero-content page-container max-w-[690px]">
         <div>
           <p className="text-[20px] md:text-[36px] font-medium leading-none uppercase text-black2">
             CHƯƠNG TRÌNH
