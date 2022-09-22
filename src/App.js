@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Benefit from "./components/Benefit";
 import Care from "./components/Care";
 import Coach from "./components/Coach";
+import BackToTop from "./components/common/BackToTop";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -22,6 +23,7 @@ function App() {
       <Content></Content>
       <Register></Register>
       <Organizer></Organizer>
+      <BackToTop></BackToTop>
       <Footer></Footer>
     </Fragment>
   );

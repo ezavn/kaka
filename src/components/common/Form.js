@@ -4,20 +4,35 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Input from "./Input";
 import Button from "./Button";
+import Bx from "wow-bx24";
+import { useState } from "react";
 
 const schema = yup
   .object({
-    name: yup.string().required("Vui lòng điền vào tên của bạn"),
-    email: yup
+    NAME: yup.string().required("Vui lòng điền vào tên của bạn"),
+    EMAIL: yup
       .string()
       .required("Vui lòng điền vào email của bạn")
       .email("Vui lòng điền đúng định dạng email"),
-    phone: yup.string().required("Vui lòng điền vào số điện thoại của bạn"),
-    company: yup.string().required("Vui lòng điền vào tên công ty của bạn"),
+    PHONE: yup.string().required("Vui lòng điền vào số điện thoại của bạn"),
+    COMPANY_TITLE: yup
+      .string()
+      .required("Vui lòng điền vào tên công ty của bạn"),
   })
   .required();
 
 const Form = () => {
+  const [loading, setLoading] = useState(false);
+  let f_rid = "968";
+  let f_source = "WEBFORM";
+  const f_query = window.location.search;
+  if (f_query !== null && f_query !== "") {
+    const search_value = window.location.search;
+    const params = new URLSearchParams(search_value);
+    f_source = "3";
+    f_rid = params.get("rid");
+  }
+  const $bx = new Bx();
   const {
     handleSubmit,
     control,
@@ -27,36 +42,44 @@ const Form = () => {
     mode: "onChange",
     resolver: yupResolver(schema),
     defaultValues: {
-      title: "SALE_PRO",
+      TITLE: "CRM_FORM_SALESPRO_",
+      ASSIGNED_BY_ID: f_rid,
+      SOURCE_ID: f_source,
     },
   });
   const onHandlerSubmit = (values) => {
+    setLoading(true);
     if (!isValid) return;
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-      // Adding method type
-      method: "POST",
-
-      // Adding body or contents to send
-      body: JSON.stringify({
-        values,
-      }),
-
-      // Adding headers to the request
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      // Converting to JSON
-      .then((response) => response.json())
-
-      // Displaying results to console
-      .then((data) => {
-        if (data) {
-          alert("Dang ky thanh cong");
-          console.log(data);
-        } else {
-          alert("Dang ky khong thanh cong");
-        }
+    $bx
+      .call("crm.lead.add", {
+        fields: {
+          ...values,
+          TITLE: values.TITLE,
+          NAME: values.NAME,
+          COMPANY_TITLE: values.COMPANY_TITLE,
+          ASSIGNED_BY_ID: values.ASSIGNED_BY_ID,
+          SOURCE_ID: values.SOURCE_ID,
+          PHONE: [{ VALUE: values.PHONE, VALUE_TYPE: "WORK" }],
+          EMAIL: [{ VALUE: values.EMAIL }],
+        },
+      })
+      .then((result) => {
+        setLoading(false);
+        alert("Đăng ký thành công");
+        reset({
+          TITLE: "CRM_FORM_SALESPRO_",
+          ASSIGNED_BY_ID: f_rid,
+          SOURCE_ID: f_source,
+          NAME: "",
+          PHONE: "",
+          EMAIL: "",
+          COMPANY_TITLE: "",
+        });
+        console.log(result);
+      })
+      .catch((error) => {
+        setLoading(false);
+        alert("Đăng ký thất bại");
       });
   };
   return (
@@ -69,65 +92,81 @@ const Form = () => {
       </h3>
       <div className="flex flex-col gap-y-[15px]">
         <div className="hidden">
-          <Input name="title" id="title" control={control} type="text"></Input>
+          <Input name="TITLE" id="TITLE" control={control} type="text"></Input>
+        </div>
+        <div className="hidden">
+          <Input
+            name="SOURCE_ID"
+            id="SOURCE_ID"
+            control={control}
+            type="text"
+          ></Input>
+        </div>
+        <div className="hidden">
+          <Input
+            name="ASSIGNED_BY_ID"
+            id="ASSIGNED_BY_ID"
+            control={control}
+            type="text"
+          ></Input>
         </div>
         <div>
           <Input
-            name="name"
-            id="name"
+            name="NAME"
+            id="NAME"
             placeholder="Họ và tên"
             control={control}
             type="text"
-            error={errors.name}
+            error={errors.NAME}
           ></Input>
-          {errors.name && (
+          {errors.NAME && (
             <p className="font-medium mt-[5px] text-sm text-red-600">
-              {errors.name.message}
+              {errors.NAME.message}
             </p>
           )}
         </div>
         <div>
           <Input
-            name="email"
-            id="email"
+            name="EMAIL"
+            id="EMAIL"
             placeholder="Email…"
             control={control}
             type="text"
-            error={errors.email}
+            error={errors.EMAIL}
           ></Input>
-          {errors.email && (
+          {errors.EMAIL && (
             <p className="font-medium mt-[5px] text-sm text-red-600">
-              {errors.email.message}
+              {errors.EMAIL.message}
             </p>
           )}
         </div>
         <div>
           <Input
-            name="phone"
-            id="phone"
+            name="PHONE"
+            id="PHONE"
             placeholder="Số điện thoại"
             control={control}
             type="text"
-            error={errors.phone}
+            error={errors.PHONE}
           ></Input>
-          {errors.phone && (
+          {errors.PHONE && (
             <p className="font-medium mt-[5px] text-sm text-red-600">
-              {errors.phone.message}
+              {errors.PHONE.message}
             </p>
           )}
         </div>
         <div>
           <Input
-            name="company"
-            id="company"
+            name="COMPANY_TITLE"
+            id="COMPANY_TITLE"
             placeholder="Công ty"
             control={control}
             type="text"
-            error={errors.company}
+            error={errors.COMPANY_TITLE}
           ></Input>
-          {errors.company && (
+          {errors.COMPANY_TITLE && (
             <p className="font-medium mt-[5px] text-sm text-red-600">
-              {errors.company.message}
+              {errors.COMPANY_TITLE.message}
             </p>
           )}
         </div>
@@ -136,9 +175,9 @@ const Form = () => {
             type="submit"
             secondary
             className="mt-[30px]"
-            isDisable={isSubmitting}
+            isDisable={loading}
           >
-            {isSubmitting ? (
+            {loading ? (
               <div className="w-5 h-5 mx-auto border-2 border-t-2 rounded-full border-t-transparent animate-spin"></div>
             ) : (
               "Đăng ký ngay"
