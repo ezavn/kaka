@@ -24,9 +24,9 @@ const Hero = () => {
                 alt=""
               />
             </div>
-            <div className="flex flex-col font-semibold text-[12px] md:text-[20px] text-black2 ml-[15px]">
+            <div className="flex flex-col font-semibold text-[10px] md:text-[20px] text-black2 ml-[15px]">
               <span>08h30 - 17h00</span>
-              <span>Thứ Bảy, Ngày 00/00/2022</span>
+              <span>T7 - CN, Ngày 01 - 02/10/2022</span>
             </div>
           </div>
           <div className="h-[47px] w-[2px] bg-black2 mx-[15px]"></div>
@@ -38,7 +38,7 @@ const Hero = () => {
                 alt=""
               />
             </div>
-            <div className="flex flex-col font-semibold text-[12px] md:text-[20px] text-black2 ml-[15px]">
+            <div className="flex flex-col font-semibold text-[10px] md:text-[20px] text-black2 ml-[15px]">
               <span>Hình thức</span>
               <span>OFFLINE</span>
             </div>

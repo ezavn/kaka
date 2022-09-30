@@ -6,6 +6,7 @@ import Input from "./Input";
 import Button from "./Button";
 import Bx from "wow-bx24";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const schema = yup
   .object({
