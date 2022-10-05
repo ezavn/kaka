@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Title from "./common/Title";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const cares = [
   {
@@ -34,9 +36,18 @@ const cares = [
 ];
 
 const Care = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <section className="care page-container md:mb-section mb-sectionMB">
-      <Title subTitle="NHỮNG VẤN ĐỀ" className="text-center mb-[50px]">
+      <Title
+        data-aos="zoom-in-up"
+        data-aos-duration="1000"
+        subTitle="NHỮNG VẤN ĐỀ"
+        className="text-center mb-[50px]"
+      >
         ANH/CHỊ BẬN TÂM
       </Title>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px]">
@@ -58,7 +69,11 @@ const Care = () => {
 
 const CareItem = ({ image, icon, number, children }) => {
   return (
-    <div className="relative flex flex-col items-center justify-center">
+    <div
+      data-aos="zoom-in-up"
+      data-aos-duration="1500"
+      className="relative flex flex-col items-center justify-center"
+    >
       <div
         className={`${image} bg-center bg-cover bg-no-repeat w-[250px] h-[250px] rounded-full flex items-center justify-center flex-shrink-0`}
       >

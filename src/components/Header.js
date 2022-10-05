@@ -18,17 +18,30 @@ const Header = () => {
           />
         </a>
         <div className="hidden md:flex items-center menu gap-x-[50px]">
-          <a href="#content" className="font-bold uppercase font-lato">
+          <a
+            href="#content"
+            className="font-bold uppercase transition-all duration-500 font-lato hover:text-red"
+          >
             NỘI DUNG
           </a>
-          <a href="#value" className="font-bold uppercase font-lato">
+          <a
+            href="#value"
+            className="font-bold uppercase duration-500 font-lato hover:text-red"
+          >
             GIÁ TRỊ
           </a>
-          <a href="#coach" className="font-bold uppercase font-lato">
+          <a
+            href="#coach"
+            className="font-bold uppercase duration-500 font-lato hover:text-red"
+          >
             DIỄN GIẢ
           </a>
         </div>
-        <Button small href="#register-form" className="hidden md:inline-flex">
+        <Button
+          small
+          href="#register-form"
+          className="hidden btn-header md:inline-flex"
+        >
           ĐĂNG KÝ NGAY
         </Button>
         {show && (

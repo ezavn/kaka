@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "./common/Button";
 import Title from "./common/Title";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Sale = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <section className="flex flex-col items-center md:flex-row sale page-container--lg md:mb-section mb-sectionMB">
-      <div className="w-auto md:w-[380px] lg:w-[590px] lg:h-[390px]">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="1500"
+        className="w-auto md:w-[380px] lg:w-[590px] lg:h-[390px]"
+      >
         <img
           src="/images/sale-1.png"
           className="inline-block object-cover w-full h-full"
           alt=""
         />
       </div>
-      <div className="text-center md:text-left mt-[20px] md:mt-0 md:ml-[30px] lg:ml-[96px]">
+      <div
+        data-aos="fade-left"
+        data-aos-duration="1500"
+        className="text-center md:text-left mt-[20px] md:mt-0 md:ml-[30px] lg:ml-[96px]"
+      >
         <p className="flex justify-center md:justify-start items-center mb-[10px]">
           <img
             srcSet="/icons/dot-icon.png 2x"
@@ -35,7 +49,11 @@ const Sale = () => {
           </Button>
         </div>
       </div>
-      <div className="hidden ml-auto lg:block">
+      <div
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        className="hidden ml-auto lg:block"
+      >
         <img src="/images/sale-2.png" alt="" />
       </div>
     </section>

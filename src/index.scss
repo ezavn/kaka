@@ -6,7 +6,12 @@
   * {
     box-sizing: border-box;
   }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
   body {
+    scroll-behavior: smooth;
     @apply bg-white font-body text-black2;
     font-size: 16px;
     line-height: 1.6;
@@ -102,4 +107,25 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
 
 input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
   transform: rotate(-45deg);
+}
+
+.box-time {
+  border-bottom: 2px dashed #979797;
+}
+
+.btn-profile,
+.btn-header {
+  animation: scaleElement 1s ease infinite;
+}
+
+@keyframes scaleElement {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

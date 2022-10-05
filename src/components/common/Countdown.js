@@ -8,7 +8,7 @@ const Countdown = () => {
     });
   };
   const timediff = Math.floor(
-    new Date("October 1,2022 00:00:00").getTime() - new Date().getTime()
+    new Date("October 22,2022 00:00:00").getTime() - new Date().getTime()
   );
   const [deadline, setDeadline] = useState({
     days: "00",
@@ -37,13 +37,10 @@ const Countdown = () => {
     }
   }, [duration]);
   return (
-    <div className="justify-center md:justify-start md:w-[407px] md:h-[95px] h-[70px] flex items-center gap-x-2 mx-auto">
+    <div className="justify-center md:justify-start md:w-[407px] md:h-[95px] h-[70px] flex items-center gap-x-2 mx-auto md:mt-[30px] mt-[20px]">
       <Box>{deadline.days}</Box>
-      <Dots></Dots>
       <Box type="giờ">{deadline.hours}</Box>
-      <Dots></Dots>
       <Box type="phút ">{deadline.minutes}</Box>
-      <Dots></Dots>
       <Box type="giây">{deadline.seconds}</Box>
     </div>
   );
@@ -51,11 +48,11 @@ const Countdown = () => {
 
 const Box = ({ children, type = "ngày" }) => {
   return (
-    <div className="md:w-[95px] md:h-[95px] w-[55px] h-[55px] rounded-[10px] bg-transparent flex items-center flex-col justify-between p-[10px]">
-      <h4 className="text-red font-semibold md:text-[52px] text-[32px] flex-1 leading-[1]">
+    <div className="md:w-[95px] md:h-[95px] w-[55px] h-[55px] rounded-[10px] flex items-center flex-col justify-between md:p-[10px] bg-red">
+      <h4 className="text-white font-semibold md:text-[52px] text-[32px] flex-1 leading-[1]">
         {children}
       </h4>
-      <span className="text-blue2 text-[14px] font-bold">{type}</span>
+      <span className="text-white text-[14px] font-bold">{type}</span>
     </div>
   );
 };

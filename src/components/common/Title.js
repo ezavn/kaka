@@ -1,8 +1,16 @@
 import React from "react";
 
-const Title = ({ children, subTitle = "", reverse, className = "", white }) => {
+const Title = ({
+  children,
+  subTitle = "",
+  reverse,
+  className = "",
+  white,
+  ...props
+}) => {
   return (
     <div
+      {...props}
       className={`flex flex-col gap-y-[10px] ${
         reverse ? "flex-col-reverse" : ""
       } ${className}`}

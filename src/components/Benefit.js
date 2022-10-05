@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Title from "./common/Title";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const benefits = [
   {
@@ -25,6 +27,10 @@ const benefits = [
 ];
 
 const Benefit = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <section
       id="value"
@@ -64,7 +70,11 @@ const Benefit = () => {
 
 const BenefitItem = ({ icon, children }) => {
   return (
-    <div className="flex flex-col justify-center items-center gap-y-[20px] bg-white py-[30px] px-[20px]">
+    <div
+      data-aos="flip-down"
+      data-aos-duration="1000"
+      className="flex flex-col justify-center items-center gap-y-[20px] bg-white py-[30px] px-[20px]"
+    >
       <div className=" w-[50px] h-[60px] lg:w-[90px] lg:h-[110px] flex-shrink-0">
         <img
           srcSet={`${icon} 2x`}
