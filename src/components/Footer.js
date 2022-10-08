@@ -32,19 +32,28 @@ const Footer = () => {
             </div>
             <div className="flex gap-x-[14px] items-baseline justify-start mb-[15px] md:mb-[25px]">
               <img srcSet="/icons/envelope.png 2x" alt="" />
-              <a href="mailto:acadesiq@mail.com">acadesiq@mail.com</a>
+              <a href="mailto:info@actioncoachcbd.com">
+                info@actioncoachcbd.com
+              </a>
             </div>
             <div className="flex gap-x-[14px] items-baseline justify-start mb-[15px] md:mb-[25px]">
               <img srcSet="/icons/phone.png 2x" alt="" />
-              <a href="tel:+1-202-555-0190">+1-202-555-0190</a>
+              <a href="tel:1800.8087">1800.8087</a>
             </div>
           </div>
         </div>
         <div>
           <h3 className="text-[24px] font-semibold mb-[20px] md:mb-[65px]">
-            FANPAGE CBD FIRM
+            FANPAGE
           </h3>
-          <div>
+          <a
+            href="https://www.facebook.com/vubathe"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="/images/fanpage-footer.png" alt="" />
+          </a>
+          {/* <div>
             <iframe
               src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FActionCOACHCBDFirm%2F&tabs&width=280&height=&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=495083570829349"
               width={290}
@@ -55,7 +64,7 @@ const Footer = () => {
               allowFullScreen={true}
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

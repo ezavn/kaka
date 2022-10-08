@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Title from "./common/Title";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Slide from "./common/Slide";
 
 const Coach = () => {
   useEffect(() => {
@@ -11,18 +12,19 @@ const Coach = () => {
   return (
     <section
       id="coach"
-      className="coach page-container mb-sectionMB md:mb-section lg:mb-0"
+      className="coach page-container--lg lg:mb-0 md:py-section py-sectionMB"
     >
       <Title
         subTitle="TẠI CHƯƠNG TRÌNH"
         reverse
-        className="text-center mb-[30px]"
+        className="text-center mb-[50px]"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
         DIỄN GIẢ
       </Title>
-      <div className="flex flex-col-reverse items-center lg:flex-row xl:items-start">
+      <Slide></Slide>
+      {/* <div className="flex flex-col-reverse items-center lg:flex-row xl:items-start">
         <div data-aos="fade-right" data-aos-duration="1500">
           <div className="flex-1 mt-[30px] md:mt-0">
             <p className="text-[18px] md:text-[24px] font-semibold text-black">
@@ -37,25 +39,27 @@ const Coach = () => {
           </div>
           <div className="flex flex-col gap-y-[20px] md:gap-y-[35px]">
             <Info icon="/icons/coach-icon-1.png" title="TẦM NHÌN">
-              Thế giới hạnh phúc hơn khi mọi người tin nhau.
+              Tạo sự khác biệt để thành công cho Doanh nghiệp
             </Info>
             <Info icon="/icons/coach-icon-2.png" title="SỨ MỆNH">
-              <p>- Thúc đẩy khách hàng hành động đến cùng.</p>
-              <p>- Xây dựng "dream team" cam kết vì mục tiêu chung.</p>
-              <p>- Nâng tầm nhà cung ứng để chơi cùng thắng.</p>
-              <p>- Giữ được tiền & tăng tiền cho nhà đầu tư theo thời gian.</p>
+              <p>
+                - Áp dụng thành thạo và chính xác hệ thống ActionCOACH cho Khách
+                hàng.
+              </p>
+              <p>
+                - Giúp Khách hàng tìm ra ĐIỂM MẠNH để tạo ra USP giúp Doanh
+                nghiệp Thành công nhờ điểm mạnh của Chủ doanh nghiệp.
+              </p>
+              <p>
+                - Xây dựng Đội ngũ thông qua việc sử dụng thành thạo công cụ
+                DISC & Motivators.
+              </p>
+              <p>- Giúp Khách hàng tăng doanh thu phải tăng lợi nhuận.</p>
+              <p>- Giúp Khách hàng vượt qua nỗi sợ để giỏi hơn mỗi ngày.</p>
             </Info>
-            {/* <Info icon="/icons/coach-icon-3.png" title="HỌC VỊ">
-              Kỹ sư xây dựng, công trình thủy thềm lục địa
-            </Info>
-            <Info icon="/icons/coach-icon-4.png" title="KINH NGHIỆM">
-              16 năm quản lý nhà nước, thi công, giám đốc dự án, giám đốc kinh
-              doanh, chủ doanh nghiệp xây dựng công trình giao thông, dân dụng,
-              công nghiệp & nhà cao tầng.
-            </Info> */}
             <a
               href="https://drive.google.com/file/d/1twYoi_If5wVl1tmhYeX7DYPVmOziWaQA/view?usp=sharing"
-              className="flex cursor-pointer btn-profile"
+              className="flex self-center cursor-pointer btn-profile"
               target="_blank"
               rel="noreferrer"
             >
@@ -80,7 +84,7 @@ const Coach = () => {
             alt=""
           />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
@@ -98,5 +102,16 @@ const Info = ({ icon, title, children }) => {
     </div>
   );
 };
+
+{
+  /* <Info icon="/icons/coach-icon-3.png" title="HỌC VỊ">
+              Kỹ sư xây dựng, công trình thủy thềm lục địa
+            </Info>
+            <Info icon="/icons/coach-icon-4.png" title="KINH NGHIỆM">
+              16 năm quản lý nhà nước, thi công, giám đốc dự án, giám đốc kinh
+              doanh, chủ doanh nghiệp xây dựng công trình giao thông, dân dụng,
+              công nghiệp & nhà cao tầng.
+            </Info> */
+}
 
 export default Coach;

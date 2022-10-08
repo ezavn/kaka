@@ -34,7 +34,7 @@ const Benefit = () => {
   return (
     <section
       id="value"
-      className="benefit md:py-section py-sectionMB bg-[url('../public/images/benefit-bg.png')] bg-left lg:bg-center bg-no-repeat md:mb-section mb-sectionMB"
+      className="benefit md:py-section py-sectionMB bg-[url('../public/images/benefit-bg.png')] bg-left lg:bg-center bg-no-repeat"
     >
       <div className="page-container--md h-auto md:h-[400px] lg:h-[538px] flex md:flex-row flex-col">
         <div className="hidden md:flex items-center justify-center w-[350px] lg:w-[394px] h-full bg-red flex-shrink-0 relative px-[40px] lg:px-[60px]">
