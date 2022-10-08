@@ -43,7 +43,7 @@ const Form = () => {
     mode: "onChange",
     resolver: yupResolver(schema),
     defaultValues: {
-      TITLE: "CRM_FORM_SALESPRO_",
+      TITLE: "CRM_FORM_SALESPRO",
       ASSIGNED_BY_ID: f_rid,
       SOURCE_ID: f_source,
     },
@@ -68,7 +68,7 @@ const Form = () => {
         setLoading(false);
         alert("Đăng ký thành công");
         reset({
-          TITLE: "CRM_FORM_SALESPRO_",
+          TITLE: "CRM_FORM_SALESPRO",
           ASSIGNED_BY_ID: f_rid,
           SOURCE_ID: f_source,
           NAME: "",
@@ -76,7 +76,18 @@ const Form = () => {
           EMAIL: "",
           COMPANY_TITLE: "",
         });
-        console.log(result);
+        $bx.call("crm.lead.productrows.set", {
+          id: result.result,
+          rows: [
+            {
+              PRODUCT_ID: 16250,
+              PRICE: 2500000,
+              QUANTITY: 1,
+              TAX_INCLUDED: "Y",
+              TAX_RATE: 8,
+            },
+          ],
+        });
       })
       .catch((error) => {
         setLoading(false);
@@ -86,10 +97,13 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(onHandlerSubmit)}
-      className="bg-red px-[20px] pt-[30px] md:px-[50px] md:pt-[50px] pb-[35px] md:pb-[60px] w-full md:w-[480px]"
+      className="bg-red px-[20px] pt-[30px] md:px-[50px] md:pt-[50px] pb-[35px] md:pb-[60px] w-full md:w-[508px]"
     >
-      <h3 className="font-semibold text-[24px] md:text-[30px] text-white mb-[30px] md:mb-[60px] text-center">
-        Đăng ký ngay hôm nay
+      <h3 className="font-medium text-[17px] text-white mb-[30px] md:mb-[60px] text-center">
+        Đừng bỏ lỡ cơ hội{" "}
+        <span className="font-extrabold">Tăng doanh số và Tạo ra</span> <br />{" "}
+        <span className="font-extrabold">đội ngũ bán hàng xuất sắc</span> chỉ vì
+        sự đắn đo của Anh/Chị!
       </h3>
       <div className="flex flex-col gap-y-[15px]">
         <div className="hidden">
