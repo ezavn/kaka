@@ -8,7 +8,7 @@ const Countdown = () => {
     });
   };
   const timediff = Math.floor(
-    new Date("October 29,2022 00:00:00").getTime() - new Date().getTime()
+    new Date("November 19,2022 00:00:00").getTime() - new Date().getTime()
   );
   const [deadline, setDeadline] = useState({
     days: "00",

@@ -23,7 +23,7 @@ function App() {
       <Content></Content>
       <Register></Register>
       <Organizer></Organizer>
-      {/* <BackToTop></BackToTop> */}
+      <BackToTop></BackToTop>
       <Footer></Footer>
     </Fragment>
   );

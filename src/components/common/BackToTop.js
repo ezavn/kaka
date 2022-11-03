@@ -1,27 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 
 const BackToTop = () => {
-  const handleBackToTop = () => {};
+  const [visible, setVisible] = useState(false);
+
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 300) {
+      setVisible(true);
+    } else if (scrolled <= 300) {
+      setVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+
+  window.addEventListener("scroll", toggleVisible);
   return (
-    <div
-      onClick={handleBackToTop}
-      className="rounded-[8px] flex items-center justify-center w-[30px] h-[40px] bg-blue fixed bottom-[20px] right-[20px]"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-6 h-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
+    <>
+      <div
+        onClick={scrollToTop}
+        className={`backtotop cursor-pointer w-[38px] h-[38px] fixed right-[15px] bottom-[15px] bg-red flex items-center justify-center rounded-[8px] transition duration-700 z-[99] ${
+          visible ? "translate-x-0" : "translate-x-[200px]"
+        }`}
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M5 11l7-7 7 7M5 19l7-7 7 7"
+        <img
+          className="w-[24px] h-[24px]"
+          src="/icons/backtotop-2.png"
+          alt=""
         />
-      </svg>
-    </div>
+      </div>
+    </>
   );
 };
 

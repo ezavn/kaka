@@ -45,7 +45,7 @@ const Header = () => {
           ĐĂNG KÝ NGAY
         </Button>
         {show && (
-          <div className="absolute top-[100%] left-0 right-0 bg-blue py-[30px]">
+          <div className="absolute top-[100%] left-0 right-0 bg-blue py-[30px] z-[999]">
             <div className="flex items-center menu gap-x-[50px] flex-col gap-y-[15px]">
               <a href="#content" className="font-bold uppercase font-lato">
                 NỘI DUNG

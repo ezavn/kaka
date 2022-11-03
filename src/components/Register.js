@@ -43,9 +43,9 @@ const Register = () => {
             <p className="font-semibold text-[24px] text-blue">
               Thời gian diễn ra
             </p>
-            <p className="font-bold mb-[20px]"> Thứ 7, CN Ngày 22-23/10/2022</p>
+            <p className="font-bold mb-[20px]"> Thứ 7, CN Ngày 19-20/11/2022</p>
             <div>
-              <img src="/images/ticket.png" alt="" />
+              <img srcSet="/images/ticket-sale.png 2x" alt="" />
             </div>
           </div>
           <div className="text-center">

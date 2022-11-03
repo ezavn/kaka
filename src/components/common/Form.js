@@ -6,7 +6,6 @@ import Input from "./Input";
 import Button from "./Button";
 import Bx from "wow-bx24";
 import { useState } from "react";
-import { useEffect } from "react";
 
 const schema = yup
   .object({
@@ -80,7 +79,7 @@ const Form = () => {
           id: result.result,
           rows: [
             {
-              PRODUCT_ID: 16262,
+              PRODUCT_ID: 16300,
               PRICE: 2500000,
               QUANTITY: 1,
               TAX_INCLUDED: "Y",
